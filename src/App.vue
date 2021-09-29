@@ -2,12 +2,31 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/todo">Todo</router-link> |
+      <router-link :to="'/user/'+item.id">User</router-link> |
+      <router-link :to="'/user/'+item1.id">User</router-link>
+      <!-- <a :href="'/user/'+item1.id">User1</a> -->
     </div>
     <router-view/>
   </div>
 </template>
-
+<script>
+export default {
+  data(){
+    return{
+      item : {
+        name :'user',
+        id: 'date1'
+      },
+      item1 : {
+        name :'user1',
+        id: 'date2'
+      }
+    }
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
